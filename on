@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+if [[ "$1" = 'service' || "$1" = '-s' ]]
+then
+  if [[ $(service --status-all  | grep -i $2) == *+* ]]
+  then
+    echo 'on'
+  else
+    echo 'off'
+  fi
+fi
+
+if [[ "$1" = "-p" ]]
+then
+  ps -ef | grep -i $2
+fi
+
+
+
+
